@@ -1,3 +1,3 @@
 # CleanCode
 
-![clean_code](./clean-code.jpeg)
+![clean_code](./image/clean-code.jpeg)
