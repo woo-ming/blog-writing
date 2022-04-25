@@ -1,6 +1,6 @@
 # CleanCode Book Club
 
-![clean_code](./image/clean-code.jpeg)
+![clean_code](./images/clean-code.jpeg)
 https://nomadcoders.co/clean-code
 
 ## 2022년 4월 23일 TIL
