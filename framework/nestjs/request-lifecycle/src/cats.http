@@ -1,0 +1,10 @@
+@URL = http://localhost:3000
+
+###
+GET {{URL}}/cats
+Content-Type: application/json; chaset=utf-8
+
+{
+
+}
+###
