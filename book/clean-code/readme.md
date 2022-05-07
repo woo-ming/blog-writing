@@ -3,9 +3,7 @@
 ![clean_code](./images/clean-code.jpeg)
 https://nomadcoders.co/clean-code
 
-## 2022년 4월 23일 TIL
-
-### 1장. 깨끗한 코드
+## 1장. 깨끗한 코드
 
 **책에서 기억하고 싶은 내용을 써보세요.**
 
@@ -28,3 +26,113 @@ https://nomadcoders.co/clean-code
 **오늘 읽은 다른사람의 TIL**
 
 shim8983님의 TIL (https://nomadcoders.co/community/thread/4447)
+
+## 2장. 의미 있는 이름
+
+### 의도를 분명히 밝혀라
+
+- 좋은 이름을 지으려면 시간이 걸리지만 좋은 이름으로 절약하는 시간이 훨씬 더 많다.
+
+### 그릇된 정보를 피해라
+
+- 널리 쓰이는 의미가 있는 단어를 다른 의미로 사용하면 안된다.
+- 서로 흡사한 이름을 사용하지 않도록 주의한다.
+- 일관성이 떨어지는 표기법은 그릇된 정보다.
+
+### 의미 있게 구분해라
+
+- 이름이 달라야 한다면 의미도 달라져야 한다.
+- 불용어를 추가한 이름 역시 아무런 정보도 제공하지 못한다.
+  - ex) Info나 Data는 a, an, the와 마찬가지로 의미가 불분명한 불용어다.
+- 읽는 사람이 차이를 알도록 이름을 지어라
+  - getActiveAccount(), getActiveAccounts(), getActiveAccountInfo()만보면 차이를 알 수 없다.
+
+### 발음하기 쉬운 이름을 사용해라
+
+- 프로그램은 사회 활동이다.
+
+### 검색하기 쉬운 이름을 사용해라
+
+### 인코딩을 피해라
+
+- 인터페이스 이름은 접두어를 붙이지 말자.
+
+### 자신의 기억력을 자랑하지 말자
+
+- 전문가 프로그래머는 자신의 능력을 좋은 방향으로 사용해 남들이 이해하는 코드를 내놓는다.
+
+### 클래스 이름
+
+- 클래스 이름과 객체 이름은 명사나 명사구가 적합하다.
+  - Customer, WikiPage, Account, AddressParser 등이 좋은 예
+  - Manager, Processor, Data, Info 등과 같은 단어는 피하고, 동사는 사용하지 않는다.
+
+### 메서드 이름
+
+- 메서드 이름은 동사나 동사구가 적합하다.
+  - postPayment, deletePage, save 등이 좋은 예다
+  - 접근자, 변경자, 조건자는 javaBean 표준에 따라 값 앞에 get, set, is를 붙인다.
+
+### 기발한 이름은 피해라
+
+- 재미난 이름보다 명료한 이름을 선택하라
+
+### 한개념에 한 단어를 사용해라
+
+- 추상적인 개념 하나에 단어 하나를 선택해 이를 고수한다.
+  - fetch, retrieve, get으로 제각각 부르면 혼란스럽다.
+  - 일관성 있는 어휘는 코드를 사용할 프로그래머가 반갑게 여길 선물이다.
+
+### 말장난을 하지 말자
+
+- 한단어를 두 가지 목적으로 사용하지 마라.
+- 같은 맥락이 아니면 다른 단어를 선택해라.
+
+### 해법 영역에서 가져온 이름을 사용해라
+
+- 코드를 읽을 사람도 프로그래머다, 모든 이름을 도메인 (문제영영)에서 가져오는 정책은 현명하지 못하다.
+
+### 도메인(문제 영역)에서 가져온 이름을 사용해라
+
+- 조건은 적절한 '프로그래머 용어'가 없다면 도메인에서 이름을 가져온다.
+- 우수한 프로그래머와 설계자라면 해법 영역과 문제영역을 구분할 줄 알아야 한다.
+- 문제 영역 개념과 관련이 깊은 코드라면 문제 영역에서 이름을 가져와야 한다.
+
+### 의미 있는 맥락을 추가해라
+
+```kotlin
+// worst
+var firstName
+var lastName
+var street
+var houseNumber
+var city
+var state
+var zipcode
+
+//better
+
+var addrFirstName
+var addrLastName
+var addrStreet
+var addrHouseNumber
+var addrCity
+var addrState
+var addrZipcode
+
+//best
+data class Address (
+    var firstName,
+    var lastName,
+    var street,
+    var houseNumber,
+    var city,
+    var state,
+    var zipcode,
+)
+```
+
+### 오늘 읽은 소감은? 떠오르는 생각을 가볍게 적어보세요\*\*
+
+- 변수 명을 지을 때는 생각 없이 짓지 말자.
+- 남을 위한 변수 명은 미래에 나에게도 도움이 된다.
