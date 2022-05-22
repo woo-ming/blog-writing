@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  mysql_local:
+    image: mysql:8.0.29
+    container_name: mysql_local
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - '33060:33060'
+    environment:
+      MYSQL_ROOT_PASSWORD: local_password
+    volumes:
+      - ./docker/.mysql/data:/var/lib/mysql
+
+  redis_local:
+    image: redis:7.0.0
+    command: redis-server --port 6379
+    container_name: redis_local
+    hostname: redis_local
+    labels:
+      - 'name=redis_local'
+      - 'mode=standalone'
+    ports:
+      - 6379:6379
+    volumes:
+      - ./docker/.redis/data:/var/lib/redis

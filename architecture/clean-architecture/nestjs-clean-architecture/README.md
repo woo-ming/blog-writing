@@ -36,6 +36,11 @@
 
 ## Architecture Design
 
+## Implementation Order
+
+1. Domain Driven Design
+2. Configuration Settings
+
 ## Tech Stack
 
 # Reference
