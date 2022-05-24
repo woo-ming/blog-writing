@@ -1,7 +1,6 @@
-# CleanCode Book Club
+# CleanCode
 
-![clean_code](./images/clean-code.jpeg)
-https://nomadcoders.co/clean-code
+![clean_code](../images/clean-code.jpeg)
 
 ## 1장. 깨끗한 코드
 
