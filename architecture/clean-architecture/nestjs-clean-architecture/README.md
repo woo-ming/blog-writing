@@ -39,10 +39,17 @@
 ## Implementation Order
 
 1. Domain Driven Design
-2. Configuration Settings
+2. Project Settings
+   - NestJS Setting
+   - Configuration Setting
+   - Database Setting With Docker ( MySQL8, Redis )
 
-## Tech Stack
+## Used Tech Stack
 
-# Reference
+- Typescript
+- NestJS
+- Docker
+
+## Reference
 
 - [Uncle Bob Blog](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
