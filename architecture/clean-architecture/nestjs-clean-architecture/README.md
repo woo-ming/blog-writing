@@ -30,6 +30,20 @@
 예) 상품이 VIP회원에만 가격이 다른게 설정
 ```
 
+- The above requirements are the content of Lawlabs assignments.
+
+### Additional requirements
+
+```bash
+- 회원은 상품 주문을 할 수 있습니다.
+- 주문을 하게 되면 결제 대기 상태가 됩니다.
+- 결제 대기 상태에서는 주문을 취소 할 수 있습니다.
+- 결제를 하게 되면 결제 성공 또는 실패가 되고 성공 시 처리 상태로 변경이 됩니다, 실패 시 결제 실패 시 결제 실패 상태로 변경됩니다.
+- 처리중 상태에서는 주문 취소가 불가하고, 배송이 완료 되면 완료된 상태로 변경이 됩니다.
+- 완료된 상태에서 환불이 가능하며 환불 후 추가 이벤트는 이번 과제에서 구현하지 않습니다.
+
+```
+
 ## Previous Implementation
 
 [Lawlabs Assignment With 3-tier Layred Architecture](https://github.com/woo-ming/lawlabs-assignment)
@@ -38,11 +52,62 @@
 
 ## Implementation Order
 
-1. Domain Driven Design
-2. Project Settings
-   - NestJS Setting
-   - Configuration Setting
-   - Database Setting With Docker ( MySQL8, Redis )
+1. Project Settings
+   - nestJS Setting
+   - configuration setting
+   - database setting with docker ( MySQL8, Redis )
+2. Usecase deduction
+   - User
+     - Register User
+     - Update User Grade
+     - Update User Information
+     - Delete User
+   - Product
+     - Register Product
+     - Update Product
+     - Retrieve Product
+     - Delete Product
+   - Order
+     - Register Order
+     - Cancel Order
+     - Refund Order
+     - Complete Order
+3. Define domain
+   - User Aggregate
+     - User
+       - userId
+       - id
+       - password
+     - User Grade
+       - userId
+       - grade (GENERAL, SPECIAL, VIP)
+     - UserAuthority
+       - userId
+       - authority (ADMIN, OPERATOR, GENERAL)
+   - Product Aggregate
+     - Product
+       - productId
+       - name
+       - price
+     - Discount
+       - applyGrade
+       - discountRate
+   - Order Aggregate
+     - Order
+       - orderId
+       - orderDate
+       - orderer
+       - address
+       - status ( PENDING_PAYMENT, FAILED, PROCESSING, COMPLETED, CANCELED, REFUNDED )
+     - Orderer
+       - orderId
+       - name
+       - phone
+     - OrderProduct
+       - orderId
+       - productId
+       - amount
+4.
 
 ## Used Tech Stack
 

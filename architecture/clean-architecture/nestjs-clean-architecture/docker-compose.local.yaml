@@ -8,7 +8,7 @@ services:
     ports:
       - '33060:3306'
     environment:
-      - MYSQL_DATABASE=user
+      - MYSQL_DATABASE=clean-architecture
       - MYSQL_ROOT_PASSWORD=local_password
       - MYSQL_USER=wooming
       - MYSQL_PASSWORD=local_password
