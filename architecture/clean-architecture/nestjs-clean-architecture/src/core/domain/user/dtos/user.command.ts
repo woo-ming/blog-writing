@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional, IsString } from 'class-validator';
-import { Optional } from 'src/core/common/types/common-type';
+import { Nullable, Optional } from 'src/core/common/types/common-type';
 import { UserGrade, UserRole } from '../entity/user.entity';
 
 export class RegisterUserCommand {
@@ -14,6 +14,11 @@ export class RegisterUserCommand {
 
   @IsString()
   readonly grade: UserGrade;
+
+  readonly userId: Optional<string>;
+  readonly createdAt: Optional<Date>;
+  readonly updatedAt: Optional<Date>;
+  readonly deletedAt: Optional<Nullable<Date>>;
 
   constructor(dto: {
     id: string;
