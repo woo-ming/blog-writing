@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:31423/spring_batch
+      username: root
+      password: wooming
+      driver-class-name: com.mysql.jdbc.Driver

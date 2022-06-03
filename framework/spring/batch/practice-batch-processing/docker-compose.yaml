@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  mysql_local:
+    container_name: mysql_for_spring_batch
+    platform: linux/x86_64
+    image: mysql:8.0.29
+    ports:
+      - "31423:3306"
+    environment:
+      - MYSQL_DATABASE=spring_batch
+      - MYSQL_ROOT_PASSWORD=wooming
+      - MYSQL_USER=wooming
+      - MYSQL_PASSWORD=wooming
+      - TZ=UTC
+    command: # 명령어 실행
+      - --character-set-server=utf8mb4
+    volumes:
+      - ./docker/.mysql/conf.d:/etc/mysql/conf.d
+      - ./docker/.mysql/data:/var/lib/mysql
